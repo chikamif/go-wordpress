@@ -21,7 +21,7 @@ import (
   "fmt"
   "net/http"
 
-  "github.com/robbiet480/go-wordpress"
+  "github.com/qorpress/go-wordpress"
 )
 
 func main() {
@@ -107,7 +107,7 @@ package main
 import (
   "context"
 
-  "github.com/robbiet480/go-wordpress"
+  "github.com/qorpress/go-wordpress"
 )
 
 func main() {
