@@ -7,7 +7,7 @@ A Go client library for the [Wordpress REST API](https://developer.wordpress.org
 ## Installation
 
 ```bash
-go get github.com/robbiet480/go-wordpress
+go get github.com/qorpress/go-wordpress
 ```
 
 ## Usage
