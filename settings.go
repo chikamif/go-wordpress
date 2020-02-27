@@ -1,6 +1,8 @@
 package wordpress
 
-import "context"
+import (
+	"context"
+)
 
 // Settings represents a WordPress settings.
 type Settings struct {

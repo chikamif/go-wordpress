@@ -36,3 +36,4 @@ _testmain.go
 credential.txt
 
 .idea
+.env

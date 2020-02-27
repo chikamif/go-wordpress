@@ -1,6 +1,8 @@
 package wordpress
 
-import "net/http"
+import (
+	"net/http"
+)
 
 // BasicAuthTransport is an http.RoundTripper that authenticates all requests
 // using HTTP Basic Authentication with the provided username and password.

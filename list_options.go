@@ -4,7 +4,9 @@
 
 package wordpress
 
-import "time"
+import (
+	"time"
+)
 
 // CategoryListOptions are options that can be passed to List().
 type CategoryListOptions struct {

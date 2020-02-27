@@ -4,8 +4,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/robbiet480/go-wordpress"
 	"golang.org/x/oauth2"
+
+	"github.com/qorpress/go-wordpress"
 )
 
 func main() {
