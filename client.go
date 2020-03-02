@@ -483,7 +483,7 @@ func (c *Client) PostData(ctx context.Context, urlStr string, content []byte, co
 	}
 
 	req.Header.Set("Content-Type", w.FormDataContentType())
-	req.Header.Set("Content-Disposition", fmt.Sprintf("filename=%v", filename))
+	req.Header.Set("Content-Disposition", fmt.Sprintf("attachment; filename=%v", filename))
 
 	// Send request
 	return c.Do(ctx, req, &result)

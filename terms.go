@@ -32,7 +32,7 @@ func (c *TermsService) List(ctx context.Context, taxonomy string, params interfa
 func (c *TermsService) Tag() *TermsTaxonomyService {
 	return &TermsTaxonomyService{
 		client:       c.client,
-		url:          fmt.Sprintf("%v/tag", "terms"),
+		url:          fmt.Sprintf("%v/tags", "terms"),
 		taxonomyBase: "tag",
 	}
 }
