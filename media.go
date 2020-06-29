@@ -12,7 +12,6 @@ type MediaDetailsSizesItem struct {
 	Height    int    `json:"height,omitempty"`
 	MimeType  string `json:"mime_type,omitempty"`
 	SourceURL string `json:"source_url,omitempty"`
-	Caption   string `json:"caption,omitempty"`
 }
 
 // MediaDetailsSizes provides different sizes of the same media item.
@@ -40,6 +39,7 @@ type MediaUploadOptions struct {
 	Filename    string
 	ContentType string
 	Data        []byte
+	Caption     string
 }
 
 // Media represents a WordPress post media.
@@ -94,7 +94,7 @@ func (c *MediaService) List(ctx context.Context, opts *MediaListOptions) ([]*Med
 // Create creates a new media.
 func (c *MediaService) Create(ctx context.Context, options *MediaUploadOptions) (*Media, *Response, error) {
 	var created Media
-	resp, err := c.client.PostData(ctx, "media", options.Data, options.ContentType, options.Filename, &created)
+	resp, err := c.client.PostData(ctx, "media", options.Data, options.ContentType, options.Filename, options.Caption, &created)
 	return &created, resp, err
 }
 

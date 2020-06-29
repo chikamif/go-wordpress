@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/robbiet480/go-wordpress"
+	"github.com/chikamif/go-wordpress"
 )
 
 func factoryPost() wordpress.Post {

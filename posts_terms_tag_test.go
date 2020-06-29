@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/robbiet480/go-wordpress"
+	"github.com/chikamif/go-wordpress"
 )
 
 func cleanUpPostsTermsTag(t *testing.T, postID int, id int) {

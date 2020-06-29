@@ -445,7 +445,7 @@ func (c *Client) Delete(ctx context.Context, url string, params interface{}, res
 }
 
 // PostData allows uploading of binary objects to the WordPress REST API.
-func (c *Client) PostData(ctx context.Context, urlStr string, content []byte, contentType string, filename string, result interface{}) (*Response, error) {
+func (c *Client) PostData(ctx context.Context, urlStr string, content []byte, contentType string, filename string, caption string, result interface{}) (*Response, error) {
 
 	// gorequest does not support POST-ing raw data
 	// so, we have to manually create a HTTP client
@@ -481,6 +481,12 @@ func (c *Client) PostData(ctx context.Context, urlStr string, content []byte, co
 	if c.UserAgent != "" {
 		req.Header.Set("User-Agent", c.UserAgent)
 	}
+
+	capt, err := w.CreateFormField("caption")
+	if err != nil {
+		return nil, err
+	}
+	capt.Write([]byte(caption))
 
 	req.Header.Set("Content-Type", w.FormDataContentType())
 	req.Header.Set("Content-Disposition", fmt.Sprintf("attachment; filename=%v", filename))

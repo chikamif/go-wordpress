@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/qorpress/go-wordpress"
+	"github.com/chikamif/go-wordpress"
 )
 
 func main() {

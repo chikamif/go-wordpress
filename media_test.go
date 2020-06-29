@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/robbiet480/go-wordpress"
+	"github.com/chikamif/go-wordpress"
 )
 
 func factoryMediaFileUpload(t *testing.T) *wordpress.MediaUploadOptions {
