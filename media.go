@@ -68,6 +68,31 @@ type Media struct {
 	SourceURL    string         `json:"source_url,omitempty"`
 }
 
+type MediaRaw struct {
+	ID           int          `json:"id,omitempty"`
+	Date         Time         `json:"date,omitempty"`
+	DateGMT      Time         `json:"date_gmt,omitempty"`
+	GUID         string       `json:"guid,omitempty"`
+	Link         string       `json:"link,omitempty"`
+	Modified     Time         `json:"modified,omitempty"`
+	ModifiedGMT  Time         `json:"modifiedGMT,omitempty"`
+	Password     string       `json:"password,omitempty"`
+	Slug         string       `json:"slug,omitempty"`
+	Status       string       `json:"status,omitempty"`
+	Type         string       `json:"type,omitempty"`
+	Title        string       `json:"title,omitempty"`
+	Author       int          `json:"author,omitempty"`
+	MediaStatus  string       `json:"media_status,omitempty"`
+	PingStatus   string       `json:"ping_status,omitempty"`
+	AltText      string       `json:"alt_text,omitempty"`
+	Caption      string       `json:"caption,omitempty"`
+	Description  string       `json:"description,omitempty"`
+	MediaType    string       `json:"media_type,omitempty"`
+	MediaDetails MediaDetails `json:"media_details,omitempty"`
+	Post         int          `json:"post,omitempty"`
+	SourceURL    string       `json:"source_url,omitempty"`
+}
+
 // MediaService provides access to the media related functions in the WordPress REST API.
 type MediaService service
 
@@ -103,6 +128,13 @@ func (c *MediaService) Get(ctx context.Context, id int, params interface{}) (*Me
 	var entity Media
 	entityURL := fmt.Sprintf("media/%v", id)
 	resp, err := c.client.Get(ctx, entityURL, params, &entity)
+	return &entity, resp, err
+}
+
+func (c *MediaService) Update(ctx context.Context, id int, media *MediaRaw) (*Media, *Response, error) {
+	var entity Media
+	entityURL := fmt.Sprintf("media/%v", id)
+	resp, err := c.client.Update(ctx, entityURL, media, &entity)
 	return &entity, resp, err
 }
 
