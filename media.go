@@ -12,6 +12,7 @@ type MediaDetailsSizesItem struct {
 	Height    int    `json:"height,omitempty"`
 	MimeType  string `json:"mime_type,omitempty"`
 	SourceURL string `json:"source_url,omitempty"`
+	Caption   string `json:"caption,omitempty"`
 }
 
 // MediaDetailsSizes provides different sizes of the same media item.
